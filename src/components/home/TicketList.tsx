@@ -6,23 +6,24 @@ import {
   TouchableOpacity,
   Linking,
   Platform,
+  ActivityIndicator,
 } from 'react-native';
 import React from 'react';
 import {t} from 'react-native-tailwindcss';
 import {useQuery} from '@tanstack/react-query';
 import {useNavigation} from '@react-navigation/native';
 import {Ticket} from '../../dto/ticket';
+import {CONFIG} from '../../constants';
 
 type Props = {};
 
 const TicketList = (props: Props) => {
   const navigation = useNavigation();
-  const {isLoading, data, error, isIdle} = useQuery<Ticket[]>({
+  const {isLoading, data, refetch, isRefetching} = useQuery<Ticket[]>({
     queryFn: () => {
-      return fetch('http://localhost:3000/api/tickets')
+      return fetch(`${CONFIG.API_BASE_URL}/api/tickets`)
         .then(res => res.json())
-        .then(data => data)
-        .catch(err => err);
+        .then(data => data);
     },
     queryKey: ['tickets'],
   });
@@ -89,8 +90,18 @@ const TicketList = (props: Props) => {
     );
   };
 
+  if (isLoading) {
+    return (
+      <View style={[t.flex, t.flex1]}>
+        <ActivityIndicator size="large" style={[t.mTAuto, t.mBAuto]} />
+      </View>
+    );
+  }
+
   return (
     <FlatList
+      onRefresh={() => refetch()}
+      refreshing={isRefetching}
       data={tickets}
       renderItem={renderTickets}
       contentContainerStyle={[t.pY4, t.pX2]}
