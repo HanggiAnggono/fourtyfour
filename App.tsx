@@ -6,8 +6,8 @@
  */
 
 import React from 'react';
-import {HomeScreen} from './src/screens/HomeScreen';
 import {QueryClient, QueryClientProvider} from 'react-query';
+import RootNavigation from './src/navigation/RootNavigation';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,7 +19,7 @@ const queryClient = new QueryClient({
 function App(): JSX.Element {
   return (
     <QueryClientProvider client={queryClient}>
-      <HomeScreen />
+      <RootNavigation />
     </QueryClientProvider>
   );
 }

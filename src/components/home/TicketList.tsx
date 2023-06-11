@@ -10,6 +10,8 @@ import {
 import React from 'react';
 import {t} from 'react-native-tailwindcss';
 import {useQuery} from 'react-query';
+import {useNavigation} from '@react-navigation/native';
+import {RootStackParamList} from '../../navigation/RootNavigation';
 
 type Props = {};
 
@@ -44,6 +46,7 @@ interface Ticket {
 }
 
 const TicketList = (props: Props) => {
+  const navigation = useNavigation();
   const {isLoading, data, error, isIdle} = useQuery<Ticket[]>({
     queryFn: () => {
       return fetch('http://localhost:3000/api/tickets')
@@ -57,6 +60,10 @@ const TicketList = (props: Props) => {
   const tickets = data || [];
 
   const renderTickets: ListRenderItem<Ticket> = ({item}) => {
+    const handlePressTicket = () => {
+      navigation.navigate('TicketDetail', {ticketId: item.id});
+    };
+
     const handlePressGoogleMapLink = () => {
       if (item.gmapLink) {
         const [lat, lng] = item.gmapLink.split('=')[1].split(',');
@@ -75,7 +82,10 @@ const TicketList = (props: Props) => {
     };
 
     return (
-      <TouchableOpacity key={item.id} style={[t.bgBlack, t.mB4, t.roundedLg]}>
+      <TouchableOpacity
+        key={item.id}
+        onPress={handlePressTicket}
+        style={[t.bgBlack, t.mB4, t.roundedLg]}>
         <View style={[t.bgGray900, t.p2, t.roundedLg]}>
           <View style={[t.flexRow, t.justifyBetween]}>
             <Text style={[]}>{item.id}</Text>
