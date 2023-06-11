@@ -5,6 +5,7 @@ import {RootStackParamList} from '../navigation/RootNavigation';
 import {useQuery} from '@tanstack/react-query';
 import {t} from 'react-native-tailwindcss';
 import {Ticket} from '../dto/ticket';
+import {CONFIG} from '../constants';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'TicketDetail'>;
 
@@ -14,10 +15,9 @@ const TicketDetailScreen = (props: Props) => {
   const {data, isLoading, error} = useQuery<Ticket>({
     queryKey: ['ticket', ticketId],
     queryFn: () => {
-      return fetch(`http://localhost:3000/api/tickets/${ticketId}`)
+      return fetch(`${CONFIG.API_BASE_URL}/api/tickets/${ticketId}`)
         .then(res => res.json())
-        .then(data => data)
-        .catch(err => err);
+        .then(data => data);
     },
   });
 
