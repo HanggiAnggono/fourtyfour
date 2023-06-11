@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import {t} from 'react-native-tailwindcss';
+import {useQuery} from 'react-query';
 
 type Props = {};
 
@@ -43,28 +44,17 @@ interface Ticket {
 }
 
 const TicketList = (props: Props) => {
-  const tickets: Ticket[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(n => ({
-    id: `TICKET-${n}`,
-    seller: {
-      address:
-        'rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic',
-      name: 'banana 4BB06316-00AC-4182-887A-0474FAE5CF5C',
-      phoneNumber: '087882681944',
+  const {isLoading, data, error, isIdle} = useQuery<Ticket[]>({
+    queryFn: () => {
+      return fetch('http://localhost:3000/api/tickets')
+        .then(res => res.json())
+        .then(data => data)
+        .catch(err => err);
     },
-    car: {
-      brand: 'Toyoda',
-      model: 'Axios',
-      type: 'gasoline',
-      year: 2023,
-      transmission: 'AT',
-      licensePlate: 'F 3212 HY',
-    },
-    inspection: {
-      schedule: new Date(),
-    },
-    ticketStatus: 'pending',
-    gmapLink: 'https://www.google.com/maps?q=40.7128,-74.0060',
-  }));
+    queryKey: ['tickets'],
+  });
+
+  const tickets = data || [];
 
   const renderTickets: ListRenderItem<Ticket> = ({item}) => {
     const handlePressGoogleMapLink = () => {
