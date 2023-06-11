@@ -16,6 +16,7 @@ export interface Car {
 }
 
 export interface Inspection {
+  inspector: string;
   schedule: Date;
 }
 
