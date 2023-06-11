@@ -2,7 +2,7 @@ import {View, Text} from 'react-native';
 import React from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../navigation/RootNavigation';
-import {useQuery} from 'react-query';
+import {useQuery} from '@tanstack/react-query';
 import {t} from 'react-native-tailwindcss';
 import {Ticket} from '../dto/ticket';
 

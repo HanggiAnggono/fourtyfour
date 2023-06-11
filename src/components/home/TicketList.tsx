@@ -9,9 +9,8 @@ import {
 } from 'react-native';
 import React from 'react';
 import {t} from 'react-native-tailwindcss';
-import {useQuery} from 'react-query';
+import {useQuery} from '@tanstack/react-query';
 import {useNavigation} from '@react-navigation/native';
-import {RootStackParamList} from '../../navigation/RootNavigation';
 import {Ticket} from '../../dto/ticket';
 
 type Props = {};
