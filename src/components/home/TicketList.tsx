@@ -12,38 +12,9 @@ import {t} from 'react-native-tailwindcss';
 import {useQuery} from 'react-query';
 import {useNavigation} from '@react-navigation/native';
 import {RootStackParamList} from '../../navigation/RootNavigation';
+import {Ticket} from '../../dto/ticket';
 
 type Props = {};
-
-type TicketStatus = 'pending' | 'done' | 'cancel';
-
-interface Seller {
-  name: string;
-  phoneNumber: string;
-  address: string;
-}
-
-interface Car {
-  brand: string;
-  model: string;
-  type: string;
-  year: number;
-  transmission: string;
-  licensePlate: string;
-}
-
-interface Inspection {
-  schedule: Date;
-}
-
-interface Ticket {
-  id: string;
-  seller: Seller;
-  gmapLink?: string;
-  car: Car;
-  inspection: Inspection;
-  ticketStatus: TicketStatus;
-}
 
 const TicketList = (props: Props) => {
   const navigation = useNavigation();

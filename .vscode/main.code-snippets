@@ -18,5 +18,9 @@
 	"View with style": {
 		"prefix": "vws",
 		"body": "<View style={[$1]}>$2</View>",
+	},
+	"Tailwind style": {
+		"prefix": "tw",
+		"body": "style={[t.$1]}"
 	}
 }
