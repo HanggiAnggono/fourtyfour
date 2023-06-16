@@ -60,8 +60,15 @@ const TicketList = (props: Props) => {
         <View style={[t.bgGray900, t.p2, t.roundedLg]}>
           <View style={[t.flexRow, t.justifyBetween]}>
             <Text style={[]}>{item.id}</Text>
-            <View style={[t.bgWhite, t.p1, t.roundedSm]}>
-              <Text style={[t.textBlack]}>{item.ticketStatus}</Text>
+            <View style={[t.flex, t.flexRow]}>
+              <View style={[t.bgWhite, t.p1, t.roundedSm, t.mR2]}>
+                <Text style={[t.textBlack]}>
+                  Inspector: {item.inspection?.inspector}
+                </Text>
+              </View>
+              <View style={[t.bgWhite, t.p1, t.roundedSm]}>
+                <Text style={[t.textBlack]}>{item.ticketStatus}</Text>
+              </View>
             </View>
           </View>
           <View style={[]}>

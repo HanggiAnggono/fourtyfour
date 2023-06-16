@@ -1,0 +1,5 @@
+important for offline mechanism
+
+- set queries and mutations default networkMode to offlineFirst
+- use createAsyncStoragePersister to store cached data on disk, and prevent cache loss after app reboot
+- setMutationsDefaults
