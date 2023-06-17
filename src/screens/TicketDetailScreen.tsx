@@ -1,28 +1,25 @@
-import {
-  View,
-  Text,
-  ActivityIndicator,
-  TextInput,
-  ScrollView,
-  Button,
-  Alert,
-  ToastAndroid,
-} from 'react-native';
-import React from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../navigation/RootNavigation';
 import {
   onlineManager,
   useMutation,
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query';
-import {t} from 'react-native-tailwindcss';
-import {Ticket} from '../dto/ticket';
-import {CONFIG} from '../constants';
-import {queryClient} from '../query-client/queryClient';
-import {keys} from '../query-client/queryKey';
+import React from 'react';
 import {Controller, FormProvider, useForm} from 'react-hook-form';
+import {
+  ActivityIndicator,
+  Button,
+  ScrollView,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
+import {t} from 'react-native-tailwindcss';
+import {CONFIG} from '../constants';
+import {Ticket} from '../dto/ticket';
+import {RootStackParamList} from '../navigation/RootNavigation';
+import {keys} from '../query-client/queryKey';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'TicketDetail'>;
 
@@ -39,6 +36,7 @@ type TicketForm = {
 const TicketDetailScreen = (props: Props) => {
   const {ticketId} = props.route.params || {};
 
+  const queryClient = useQueryClient();
   const {data, ...ticketQ} = useQuery<Ticket>({
     queryKey: keys.ticketDetail(ticketId),
     queryFn: () => {
@@ -100,7 +98,11 @@ const TicketDetailScreen = (props: Props) => {
       );
     },
     onSettled: () => {
-      queryClient.invalidateQueries({queryKey: keys.ticketDetail(ticketId)});
+      if (!onlineManager.isOnline()) {
+        // const state = dehydrate(queryClient, {dehydrateMutations: true});
+        // console.log({state});
+      }
+      // queryClient.invalidateQueries({queryKey: keys.ticketDetail(ticketId)});
       // !onlineManager.isOnline() &&
       //   ToastAndroid.show(
       //     'Ticket update is waiting connection',
@@ -171,7 +173,10 @@ const TicketDetailScreen = (props: Props) => {
 
         <FormProvider {...form}>
           <View style={[t.bgGray900, t.p1]}>
-            <Text style={[t.mB2]}>Inspection Form:</Text>
+            <View style={[t.flexRow, t.justifyBetween, t.itemsCenter]}>
+              <Text style={[t.mB2]}>Inspection Form:</Text>
+              <Button title="Submit" onPress={form.handleSubmit(onSubmit)} />
+            </View>
             {textInput({key: 'inspectorName', label: 'Inspector Name'})}
             {textInput({key: 'licensePlate', label: 'License Plate'})}
             {textInput({key: 'brand', label: 'Brand'})}
@@ -183,8 +188,8 @@ const TicketDetailScreen = (props: Props) => {
                 ? 'paused'
                 : '...'}
             </Text>
-            <Button title="Submit" onPress={form.handleSubmit(onSubmit)} />
           </View>
+          <Text style={[t.mB100]}>Hanggi</Text>
         </FormProvider>
       </View>
     </ScrollView>
