@@ -3,3 +3,314 @@ important for offline mechanism
 - set queries and mutations default networkMode to offlineFirst
 - use createAsyncStoragePersister to store cached data on disk, and prevent cache loss after app reboot
 - setMutationsDefaults
+
+
+{
+  "buster": "",
+  "timestamp": 1686986601538,
+  "clientState": {
+    "mutations": [],
+    "queries": [
+      {
+        "state": {
+          "data": [
+            {
+              "id": "TICKET-1",
+              "seller": {
+                "address": "rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic",
+                "name": "banana 4BB06316-00AC-4182-887A-0474FAE5CF5C",
+                "phoneNumber": "087882681944"
+              },
+              "car": {
+                "brand": "Toyoda",
+                "model": "Axios Bun",
+                "type": "gasoline",
+                "year": 2023,
+                "transmission": "AT",
+                "licensePlate": "F 3212 HY"
+              },
+              "inspection": {
+                "inspector": "ditabo",
+                "schedule": "2023-06-17T06:31:05.596Z"
+              },
+              "ticketStatus": "pending",
+              "gmapLink": "https://www.google.com/maps?q=40.7128,-74.0060"
+            },
+            {
+              "id": "TICKET-2",
+              "seller": {
+                "address": "rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic",
+                "name": "banana 4BB06316-00AC-4182-887A-0474FAE5CF5C",
+                "phoneNumber": "087882681944"
+              },
+              "car": {
+                "brand": "Toyoda",
+                "model": "Axios",
+                "type": "gasoline",
+                "year": 2023,
+                "transmission": "AT",
+                "licensePlate": "F 3212 HY"
+              },
+              "inspection": {
+                "inspector": "Inspector 2",
+                "schedule": "2023-06-17T06:31:05.596Z"
+              },
+              "ticketStatus": "pending",
+              "gmapLink": "https://www.google.com/maps?q=40.7128,-74.0060"
+            },
+            {
+              "id": "TICKET-3",
+              "seller": {
+                "address": "rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic",
+                "name": "banana 4BB06316-00AC-4182-887A-0474FAE5CF5C",
+                "phoneNumber": "087882681944"
+              },
+              "car": {
+                "brand": "Toyoda",
+                "model": "Axios",
+                "type": "gasoline",
+                "year": 2023,
+                "transmission": "AT",
+                "licensePlate": "F 3212 HY"
+              },
+              "inspection": {
+                "inspector": "Inspector 3",
+                "schedule": "2023-06-17T06:31:05.596Z"
+              },
+              "ticketStatus": "pending",
+              "gmapLink": "https://www.google.com/maps?q=40.7128,-74.0060"
+            },
+            {
+              "id": "TICKET-4",
+              "seller": {
+                "address": "rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic",
+                "name": "banana 4BB06316-00AC-4182-887A-0474FAE5CF5C",
+                "phoneNumber": "087882681944"
+              },
+              "car": {
+                "brand": "Toyoda",
+                "model": "Axios",
+                "type": "gasoline",
+                "year": 2023,
+                "transmission": "AT",
+                "licensePlate": "F 3212 HY"
+              },
+              "inspection": {
+                "inspector": "Inspector 4",
+                "schedule": "2023-06-17T06:31:05.596Z"
+              },
+              "ticketStatus": "pending",
+              "gmapLink": "https://www.google.com/maps?q=40.7128,-74.0060"
+            },
+            {
+              "id": "TICKET-5",
+              "seller": {
+                "address": "rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic",
+                "name": "banana 4BB06316-00AC-4182-887A-0474FAE5CF5C",
+                "phoneNumber": "087882681944"
+              },
+              "car": {
+                "brand": "Toyoda",
+                "model": "Axios",
+                "type": "gasoline",
+                "year": 2023,
+                "transmission": "AT",
+                "licensePlate": "F 3212 HY"
+              },
+              "inspection": {
+                "inspector": "Inspector 5",
+                "schedule": "2023-06-17T06:31:05.596Z"
+              },
+              "ticketStatus": "pending",
+              "gmapLink": "https://www.google.com/maps?q=40.7128,-74.0060"
+            },
+            {
+              "id": "TICKET-6",
+              "seller": {
+                "address": "rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic",
+                "name": "banana 4BB06316-00AC-4182-887A-0474FAE5CF5C",
+                "phoneNumber": "087882681944"
+              },
+              "car": {
+                "brand": "Toyoda",
+                "model": "Axios",
+                "type": "gasoline",
+                "year": 2023,
+                "transmission": "AT",
+                "licensePlate": "F 3212 HY"
+              },
+              "inspection": {
+                "inspector": "Inspector 6",
+                "schedule": "2023-06-17T06:31:05.596Z"
+              },
+              "ticketStatus": "pending",
+              "gmapLink": "https://www.google.com/maps?q=40.7128,-74.0060"
+            },
+            {
+              "id": "TICKET-7",
+              "seller": {
+                "address": "rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic",
+                "name": "banana 4BB06316-00AC-4182-887A-0474FAE5CF5C",
+                "phoneNumber": "087882681944"
+              },
+              "car": {
+                "brand": "Toyoda",
+                "model": "Axios",
+                "type": "gasoline",
+                "year": 2023,
+                "transmission": "AT",
+                "licensePlate": "F 3212 HY"
+              },
+              "inspection": {
+                "inspector": "Inspector 7",
+                "schedule": "2023-06-17T06:31:05.596Z"
+              },
+              "ticketStatus": "pending",
+              "gmapLink": "https://www.google.com/maps?q=40.7128,-74.0060"
+            },
+            {
+              "id": "TICKET-8",
+              "seller": {
+                "address": "rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic",
+                "name": "banana 4BB06316-00AC-4182-887A-0474FAE5CF5C",
+                "phoneNumber": "087882681944"
+              },
+              "car": {
+                "brand": "Toyoda",
+                "model": "Axios",
+                "type": "gasoline",
+                "year": 2023,
+                "transmission": "AT",
+                "licensePlate": "F 3212 HY"
+              },
+              "inspection": {
+                "inspector": "Inspector 8",
+                "schedule": "2023-06-17T06:31:05.596Z"
+              },
+              "ticketStatus": "pending",
+              "gmapLink": "https://www.google.com/maps?q=40.7128,-74.0060"
+            },
+            {
+              "id": "TICKET-9",
+              "seller": {
+                "address": "rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic",
+                "name": "banana 4BB06316-00AC-4182-887A-0474FAE5CF5C",
+                "phoneNumber": "087882681944"
+              },
+              "car": {
+                "brand": "Toyoda",
+                "model": "Axios",
+                "type": "gasoline",
+                "year": 2023,
+                "transmission": "AT",
+                "licensePlate": "F 3212 HY"
+              },
+              "inspection": {
+                "inspector": "Inspector 9",
+                "schedule": "2023-06-17T06:31:05.596Z"
+              },
+              "ticketStatus": "pending",
+              "gmapLink": "https://www.google.com/maps?q=40.7128,-74.0060"
+            },
+            {
+              "id": "TICKET-10",
+              "seller": {
+                "address": "rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic",
+                "name": "banana 4BB06316-00AC-4182-887A-0474FAE5CF5C",
+                "phoneNumber": "087882681944"
+              },
+              "car": {
+                "brand": "Toyoda",
+                "model": "Axios",
+                "type": "gasoline",
+                "year": 2023,
+                "transmission": "AT",
+                "licensePlate": "F 3212 HY"
+              },
+              "inspection": {
+                "inspector": "Inspector 10",
+                "schedule": "2023-06-17T06:31:05.596Z"
+              },
+              "ticketStatus": "pending",
+              "gmapLink": "https://www.google.com/maps?q=40.7128,-74.0060"
+            },
+            {
+              "id": "TICKET-11",
+              "seller": {
+                "address": "rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic",
+                "name": "banana 4BB06316-00AC-4182-887A-0474FAE5CF5C",
+                "phoneNumber": "087882681944"
+              },
+              "car": {
+                "brand": "Toyoda",
+                "model": "Axios",
+                "type": "gasoline",
+                "year": 2023,
+                "transmission": "AT",
+                "licensePlate": "F 3212 HY"
+              },
+              "inspection": {
+                "inspector": "Inspector 11",
+                "schedule": "2023-06-17T06:31:05.596Z"
+              },
+              "ticketStatus": "pending",
+              "gmapLink": "https://www.google.com/maps?q=40.7128,-74.0060"
+            }
+          ],
+          "dataUpdateCount": 3,
+          "dataUpdatedAt": 1686986553374,
+          "error": null,
+          "errorUpdateCount": 1,
+          "errorUpdatedAt": 1686986223370,
+          "fetchFailureCount": 0,
+          "fetchFailureReason": null,
+          "fetchMeta": {},
+          "isInvalidated": false,
+          "status": "success",
+          "fetchStatus": "idle"
+        },
+        "queryKey": ["tickets"],
+        "queryHash": "[\"tickets\"]"
+      },
+      {
+        "state": {
+          "data": {
+            "id": "TICKET-1",
+            "seller": {
+              "address": "rddesbanana Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, earum laboriosam architecto nostrum officiis eos placeat mollitia porro aliquam corporis exercitationem hic dolorem sit voluptas. Assumenda at quis ipsa offic",
+              "name": "banana 4BB06316-00AC-4182-887A-0474FAE5CF5C",
+              "phoneNumber": "087882681944"
+            },
+            "car": {
+              "brand": "Toyoda",
+              "model": "Axios Bun",
+              "type": "gasoline",
+              "year": 2023,
+              "transmission": "AT",
+              "licensePlate": "F 3212 HY"
+            },
+            "inspection": {
+              "inspector": "ditab",
+              "schedule": "2023-06-17T06:31:05.596Z"
+            },
+            "ticketStatus": "pending",
+            "gmapLink": "https://www.google.com/maps?q=40.7128,-74.0060"
+          },
+          "dataUpdateCount": 9,
+          "dataUpdatedAt": 1686986601538,
+          "error": null,
+          "errorUpdateCount": 0,
+          "errorUpdatedAt": 0,
+          "fetchFailureCount": 0,
+          "fetchFailureReason": null,
+          "fetchMeta": {},
+          "isInvalidated": false,
+          "status": "success",
+          "fetchStatus": "idle"
+        },
+        "queryKey": ["tickets", "detail", "TICKET-1"],
+        "queryHash": "[\"tickets\",\"detail\",\"TICKET-1\"]"
+      }
+    ]
+  }
+}
