@@ -81,7 +81,16 @@ export const PersistAsyncStorageProvider = ({
   return (
     <PersistQueryClientProvider
       client={queryClient}
-      persistOptions={{persister: asyncStoragePersister}}
+      persistOptions={{
+        persister: asyncStoragePersister,
+        dehydrateOptions: {
+          // dehydrateMutations: true,
+          shouldDehydrateMutation: m => {
+            console.log({shouldDehy: m.options.mutationKey});
+            return true;
+          },
+        },
+      }}
       onSuccess={() => {
         console.log('RESUMING PAUSED MUTATIONS');
         // hydrate(queryClient, state);
