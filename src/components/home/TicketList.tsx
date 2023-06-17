@@ -14,6 +14,7 @@ import {useQuery} from '@tanstack/react-query';
 import {useNavigation} from '@react-navigation/native';
 import {Ticket} from '../../dto/ticket';
 import {CONFIG} from '../../constants';
+import {keys} from '../../query-client/queryKey';
 
 type Props = {};
 
@@ -25,7 +26,7 @@ const TicketList = (props: Props) => {
         .then(res => res.json())
         .then(data => data);
     },
-    queryKey: ['tickets'],
+    queryKey: keys.tickets(),
   });
 
   const tickets = data || [];

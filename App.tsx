@@ -6,17 +6,20 @@
  */
 
 import {useNetInfo} from '@react-native-community/netinfo';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Text, View} from 'react-native';
 import {t} from 'react-native-tailwindcss';
 import RootNavigation from './src/navigation/RootNavigation';
 import {PersistAsyncStorageProvider} from './src/query-client/queryClient';
+import {useAsyncStorage} from '@react-native-async-storage/async-storage';
+import {useQueryClient} from '@tanstack/react-query';
 
 function App(): JSX.Element {
   return (
     <PersistAsyncStorageProvider>
       <RootNavigation />
       <NetworkInfo />
+      <Logger />
     </PersistAsyncStorageProvider>
   );
 }
@@ -32,6 +35,39 @@ const NetworkInfo = () => {
       </View>
     );
   }
+
+  return null;
+};
+
+const Logger = () => {
+  const queryClient = useQueryClient();
+  const mCache = queryClient.getMutationCache();
+  // const cache = mCache.find({mutationKey: keys.updateTicket(ticketId)});
+  const {getItem} = useAsyncStorage('tanstack-query-cache');
+  useEffect(() => {
+    const i = setInterval(() => {
+      getItem().then((result: any) => {
+        const data = JSON.parse(result);
+        console.warn(
+          new Date().toTimeString().replace('GMT+0700', ''),
+          JSON.stringify(
+            {
+              offlineMutations: data?.clientState?.mutations?.length,
+              offlineQueries: data?.clientState?.queries?.length,
+              pausedM: mCache.findAll({predicate: m => m.state.isPaused})
+                ?.length,
+            },
+            null,
+            2,
+          ),
+        );
+      });
+    }, 3000);
+
+    return () => {
+      clearInterval(i);
+    };
+  }, []);
 
   return null;
 };
