@@ -15,7 +15,7 @@ export const queryClient = new QueryClient({
   defaultOptions: {
     mutations: {
       retry: 0,
-      networkMode: 'offlineFirst',
+      // networkMode: 'offlineFirst', // dont set to offlineFirst to resume paused mutations
       cacheTime: 24 * hourInMs * 3,
       onSuccess: () => {
         ToastAndroid.show('✅ Success', ToastAndroid.SHORT);
@@ -26,7 +26,7 @@ export const queryClient = new QueryClient({
     },
     queries: {
       retry: 0,
-      networkMode: 'offlineFirst',
+      // networkMode: 'offlineFirst',
       cacheTime: 24 * hourInMs * 3,
     },
   },
