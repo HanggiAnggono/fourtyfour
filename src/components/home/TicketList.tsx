@@ -8,9 +8,9 @@ import {
   Platform,
   ActivityIndicator,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {t} from 'react-native-tailwindcss';
-import {useQuery} from '@tanstack/react-query';
+import {useQuery, useQueryClient} from '@tanstack/react-query';
 import {useNavigation} from '@react-navigation/native';
 import {Ticket} from '../../dto/ticket';
 import {CONFIG} from '../../constants';
@@ -20,6 +20,7 @@ type Props = {};
 
 const TicketList = (props: Props) => {
   const navigation = useNavigation();
+  const queryClient = useQueryClient();
   const {isLoading, data, refetch, isRefetching} = useQuery<Ticket[]>({
     queryFn: () => {
       return fetch(`${CONFIG.API_BASE_URL}/api/tickets`)
@@ -28,6 +29,17 @@ const TicketList = (props: Props) => {
     },
     queryKey: keys.tickets(),
   });
+
+  useEffect(() => {
+    queryClient.prefetchQuery({
+      queryKey: keys.ticketDetail('TICKET-1'),
+      queryFn: () => {
+        return fetch(`${CONFIG.API_BASE_URL}/api/tickets/TICKET-1`).then(res =>
+          res.json(),
+        );
+      },
+    });
+  }, []);
 
   const tickets = data || [];
 
