@@ -32,10 +32,10 @@ export const queryClient = new QueryClient({
   },
   mutationCache: new MutationCache({
     onSuccess: () => {
-      ToastAndroid.show('Pending Success', ToastAndroid.SHORT);
+      ToastAndroid.show('Cache Success', ToastAndroid.SHORT);
     },
     onError: () => {
-      ToastAndroid.show('Pending Error', ToastAndroid.SHORT);
+      ToastAndroid.show('Cache Error', ToastAndroid.SHORT);
     },
   }),
 });
@@ -51,7 +51,7 @@ queryClient.setMutationDefaults(keys.tickets(), {
       headers: {
         'Content-Type': 'application/json',
       },
-    });
+    }).then(res => res.json());
   },
 });
 
